@@ -1,0 +1,281 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <title>Hemma Health Account Past Due</title>
+</head>
+<body>
+<!-- all text should be within page-content -->
+<div class="page-content">
+    <div class="top-third">
+        <div id="heading">
+            {{clinicName}}
+            <div id="subheading">
+                {{address_city}}, {{address_state}}
+            </div>
+        </div>
+        <div id="summary">
+            <div class="column summary-left">
+                <div class="bill"><span>This Is A Bill</span></div>
+                <div class="date"><span>{{today}}</span></div>
+            </div>
+            <div class="column summary-right">
+                <div class="total-string"><span>TOTAL</span></div>
+                <div class="balance"><span>{{balance}}</span></div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="high-level-details">
+            <h2></h2>
+        </div>
+        <p>Thank you for visiting us on {{visitDate}} with {{providerName}}. Your total account balance of {{balance}} is due now.</p>
+        <h3>Questions?</h3>
+        <h3>Need a payment plan?</h3>
+
+        <span>Please call the billing department at {{facilityNumber}}</span>
+    </div>
+
+    <div id="footer">
+        <div class="footer-payment">
+            <div class="footer-col footer-col-1">
+                <div class="footer-label"><span>SUBTOTAL</span></div>
+                <div class="footer-value regular"><span>{{subtotal}}</span></div>
+            </div>
+            <div class="footer-col footer-col-2">
+                <div class="footer-label"><span>Taxes and Fees</span></div>
+                <div class="footer-value regular"><span>{{taxfees}}</span></div>
+            </div>
+            <div class="footer-col footer-col-3">
+                <div class="footer-label"><span>TOTAL</span></div>
+                <div class="footer-value large"><span>{{balance}}</span></div>
+            </div>
+            <div>
+                <div class="footer-notes"></div>
+                <div class="footer-contact">
+                    <div class="footer-contact-col ">
+                        <div class="footer-label"><span>{{website}}</span></div>
+                    </div>
+                    <div class="footer-contact-col">
+                        <div class="footer-label"><span>{{address_city}}, {{address_state}}</span></div>
+                    </div>
+                    <div class="footer-contact-col">
+                        <div class="footer-label"><span>{{email}}</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="return-address-window">
+                <div id="return-logo">
+                    <!-- your logo here! -->
+
+                    <img src="" style="height: 100%">
+                </div>
+            </div>
+</body>
+<style>
+
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 8.5in;
+        height: 11in;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-family: 'Helvetica';
+        font-weight: 400;
+    }
+
+    .page-content {
+        position: relative;
+        width: 8.125in;
+        height: 10.625in;
+        left: 0.1875in;
+        top: 0.1875in;
+        /*border: black solid 1px;*/
+    }
+
+    #return-address-window {
+        position: absolute;
+        left: .625in;
+        top: .5in;
+        width: 3.25in;
+        height: .875in;
+    }
+
+    #return-logo {
+        position: absolute;
+        left: .07in;
+        top: .02in;
+        width: 2.05in;
+        height: .3in;
+    }
+    .top-third{
+        height: 4in;
+        background-color: lightgrey;
+    }
+
+    #heading {
+        position: relative;
+        top: 1.5in;
+        left: 4.6in;
+        width: 3in;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .25in;
+        text-align: right;
+        /*border: black solid 1px;*/
+    }
+
+    #subheading {
+        padding-top: .2in;
+        font-size: .14in;
+        text-transform: none;
+    }
+
+    #summary{
+        height: 1in;
+        padding-right: .5in;
+        padding-left: .5in;
+        margin-top: 2in;
+        clear: both;
+    }
+
+    .column{
+        width: 50%;
+        height: 100%;
+    }
+
+    .summary-left{
+        float: left;
+    }
+
+    .summary-left > .bill{
+        font-size: 1em;
+    }
+
+    .summary-left > .date{
+        font-size: .8em;
+    }
+
+    .summary-right{
+        position: relative;
+        float: right;
+        background-color: darkgrey;
+        color: white;
+    }
+
+    .summary-right > .total-string{
+        margin-left: .2em;
+        margin-top: .2em;
+        font-size: 1em;
+    }
+
+    .summary-right > .balance{
+        position: absolute;
+        font-size: 2.5em;
+        text-align: right;
+        right: 0;
+        bottom: 0;
+    }
+
+    .content {
+        margin: .5in;
+        font-size: .9em;
+    }
+
+    #footer{
+        height: .75in;
+        padding-right: .5in;
+        padding-left: .5in;
+        margin-top: 1in;
+        clear: both;
+    }
+
+    .footer-payment{
+        background-color: lightgrey;
+        height: 100%
+    }
+
+    .footer-col{
+        display: inline-block;
+        height: 100%
+    }
+
+    .footer-label{
+        font-size: .8em;
+    }
+    .footer-value{
+        font-size: 1.2em;
+    }
+
+    .footer-col-1{
+        width: 15%;
+        margin-left: .1em;
+    }
+
+    .footer-col-3{
+        width: 35%;
+        float: right;
+        background-color: darkgrey;
+        position: relative;
+    }
+
+    .footer-col-3 > .footer-label{
+        position: absolute;
+        right: 0;
+    }
+
+    .footer-col-3 > .footer-value{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1.75em;
+    }
+
+    .footer-contact-col{
+        width: 32%;
+        font-size: .7em;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .row {
+        display: table-row;
+    }
+
+    .cell {
+        display: table-cell;
+        padding: 10px;
+    }
+
+    .top {
+        font-weight: 700;
+        font-size: .135in;
+        background-color: lightgray;
+    }
+
+    .bottom {
+        font-size: .12in;
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .high-level-details{
+        background-color: lightgrey
+    }
+
+</style>
+</html>

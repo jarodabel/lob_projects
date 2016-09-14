@@ -1,0 +1,478 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <title>Hemma Health Invoice</title>
+</head>
+<body>
+<!-- all text should be within page-content -->
+<div class="page-content">
+    <div class="top-third">
+        <div id="heading">
+            {{facilityName}}
+            <div id="subheading">
+                {{address_city}}, {{address_state}}
+            </div>
+        </div>
+        <div id="summary">
+            <div class="column summary-left">
+                <div class="bill"><span>This Is A Bill</span></div>
+                <div class="date"><span>{{today}}</span></div>
+                <div class="date"><span>{{name}} / {{accountNumber}}</span></div>
+            </div>
+            <div class="column summary-right">
+                <div class="total-string"><span>TOTAL</span></div>
+                <div class="balance"><span>{{balance}}</span></div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-table">
+            <div class="content-header-row">
+                <div class="content-cell zero">Date</div>
+                <div class="content-cell one">Amount</div>
+                <div class="content-cell two">Service</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+            <div class="content-row">
+                <div class="content-cell zero">2016-08-22</div>
+                <div class="content-cell one">99.00</div>
+                <div class="content-cell two">99999 exam</div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer-payment">
+            <div class="footer-col footer-col-1">
+                <div class="footer-label"><span>Taxes and Fees</span></div>
+                <div class="footer-value regular"><span>{{taxfees}}</span></div>
+            </div>
+            <div class="footer-col footer-col-2">
+                <div class="footer-label"><span>SUBTOTAL</span></div>
+                <div class="footer-value regular"><span>{{subtotal}}</span></div>
+            </div>
+            <div class="footer-col footer-col-3">
+                <div class="footer-label"><span>TOTAL</span></div>
+                <div class="footer-value large"><span>{{balance}}</span></div>
+            </div>
+            <div>
+                <div class="footer-notes"></div>
+                <div class="footer-contact">
+                    <div class="footer-contact-col ">
+                        <div class="footer-label"><span>{{website}}</span></div>
+                    </div>
+                    <div class="footer-contact-col">
+                        <div class="footer-label"><span>{{address_city}}, {{address_state}}</span></div>
+                    </div>
+                    <div class="footer-contact-col">
+                        <div class="footer-label"><span>{{email}}</span></div>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+            <div id="return-address-window">
+                <div id="return-logo">
+                    <!-- your logo here! -->
+                    <img src="" style="height: 100%">
+                </div>
+            </div>
+            <div class="top-message">
+                <span>THIS IS A STATEMENT OF SERVICES RENDERED BY PHYSICIAN(S) WHO ARE MEMBERS OF: {{facilityName}}</span>
+            </div>
+            <div class="payment-table">
+                <div class="payment-table-title">Methods of Payment</div>
+                <div class="payment-table-methods">
+                    <div class="row-label">
+                        <div class="row-label-left">WEBSITE</div>
+                        <div class="row-label-right">{{website}}</div>
+                    </div>
+                    <div class="row-label">
+                        <div class="row-label-left">PHONE</div>
+                        <div class="row-label-right">{{facilityNumber}}</div>
+                    </div>
+                    <div class="row-label">
+                        <div class="row-label-left">MAIL</div>
+                        <div class="row-label-right">see return address and form below</div>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="spacer"></div>
+
+                <div class="payment-table-cc">
+                    <div class="payment-table-cc-type">
+                        <label>&#9723 MASTER CARD</label>
+                        <label>&#9723 VISA</label>
+                        <label>&#9723 DISCOVER</label>
+                        <label>&#9723 AMEX</label>
+                        <label>&#9723 CHECK</label>
+                    </div>
+                    <div class="row-line"></div>
+                    <div class="row-label">
+                        <div class="row-label-left">CARD NUMBER</div>
+                        <div class="row-label-right">EXP. DATE</div>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <div class="row-line"></div>
+                    <div class="row-label">
+                        <div class="row-label-left">AMOUNT PAID</div>
+                        <div class="row-label-right">SIGNATURE</div>
+                    </div>
+                </div>
+                <h5>Have a question or need a payment plan?<br>
+                    Please call the billing department at {{facilityNumber}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 8.5in;
+        height: 11in;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-family: 'Helvetica';
+        font-weight: 400;
+    }
+
+    .page-content {
+        position: relative;
+        width: 8.125in;
+        height: 10.625in;
+        left: 0.1875in;
+        top: 0.1875in;
+        /*border: black solid 1px;*/
+    }
+
+    #return-address-window {
+        position: absolute;
+        left: .625in;
+        top: .5in;
+        width: 3.25in;
+        height: .875in;
+    }
+
+    #return-logo {
+        position: absolute;
+        left: .07in;
+        top: .02in;
+        width: 2.05in;
+        height: .3in;
+    }
+
+    .top-third {
+        height: 3.5in;
+        background-color: lightgrey;
+    }
+
+    .top-message {
+        text-align: left;
+        font-size: .7em;
+    }
+
+    .payment-table-title {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .payment-table-methods {
+        font-size: .7em;
+        clear: both;
+    }
+
+    .payment-table-methods .row-label-left {
+        margin-left: .25in;
+    }
+
+    .payment-table-cc {
+        font-size: .6em;
+    }
+
+    .row-line {
+        border-bottom: 1px solid black;
+        height: 2em;
+    }
+
+    .row-label {
+        clear: both;
+    }
+
+    .row-label-left {
+        float: left;
+    }
+
+    .row-label-right {
+        float: right;
+    }
+
+    .spacer {
+        height: 1em;
+    }
+
+    #heading {
+        position: relative;
+        top: .5in;
+        height: 2.6in;
+        left: 4.6in;
+        width: 3in;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .25in;
+        text-align: right;
+    }
+
+    #subheading {
+        padding-top: .2in;
+        font-size: .14in;
+        text-transform: none;
+    }
+
+    #summary {
+        height: .75in;
+        padding-right: .5in;
+        padding-left: .5in;
+        clear: both;
+    }
+
+    .column {
+        width: 50%;
+        height: 100%;
+    }
+
+    .summary-left {
+        float: left;
+    }
+
+    .summary-left > .bill {
+        font-size: 1em;
+    }
+
+    .summary-left > .date {
+        font-size: .8em;
+    }
+
+    .summary-right {
+        position: relative;
+        float: right;
+        background-color: darkgrey;
+        color: white;
+    }
+
+    .summary-right > .total-string {
+        margin-left: .2em;
+        margin-top: .2em;
+        font-size: 1em;
+    }
+
+    .summary-right > .balance {
+        position: absolute;
+        font-size: 2.5em;
+        text-align: right;
+        right: 0;
+        bottom: 0;
+    }
+
+    .content {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: .5in;
+        margin-right: .5in;
+        font-size: .9em;
+    }
+
+    .content-row {
+        width: 100%;
+    }
+
+    .content-cell {
+        display: inline-block;
+    }
+
+    .content-cell.zero {
+        width: 15%;
+        text-align: left;
+    }
+
+    .content-cell.one {
+        width: 15%;
+        text-align: right;
+    }
+
+    .content-cell.two {
+        width: 33%;
+        text-align: left;
+    }
+
+    #footer {
+        height: .5in;
+        padding-right: .5in;
+        padding-left: .5in;
+        margin-top: .5in;
+        clear: both;
+    }
+
+    .footer-payment {
+        background-color: lightgrey;
+        height: 100%
+    }
+
+    .footer-col {
+        display: inline-block;
+        height: 100%
+    }
+
+    .footer-label {
+        font-size: .8em;
+    }
+
+    .footer-value {
+        font-size: 1.2em;
+    }
+
+    .footer-col-1 {
+        width: 15%;
+        margin-left: .1em;
+    }
+
+    .footer-col-2.footer-value {
+        text-align: right;
+    }
+
+    .footer-col-3 {
+        width: 35%;
+        float: right;
+        background-color: darkgrey;
+        position: relative;
+    }
+
+    .footer-col-3 > .footer-label {
+        position: absolute;
+        right: 0;
+    }
+
+    .footer-col-3 > .footer-value {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1.75em;
+    }
+
+    .footer-contact-col {
+        width: 32%;
+        font-size: .7em;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .row {
+        display: table-row;
+    }
+
+    .cell {
+        display: table-cell;
+        padding: 10px;
+    }
+
+    .top {
+        font-weight: 700;
+        font-size: .135in;
+        background-color: lightgray;
+    }
+
+    .bottom {
+        font-size: .12in;
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .high-level-details {
+        background-color: lightgrey
+    }
+
+</style>
+</html>
