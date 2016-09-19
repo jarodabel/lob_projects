@@ -3,7 +3,7 @@
 var fs = require('fs'),
     parse = require('csv-parse'),
     otherFns = require('../common/generalDataFns.js'),
-    lob = require('../common/callLob'),
+    lob = require('callLob'),
     parser;
 
 var inputFile='./test_csvs/Patient Statement Example.csv';
@@ -17,15 +17,17 @@ function callParseData(){
 }
 
 function doLobStuff(){
-    console.log('hello')
     var aggData,
-        letters;
+        patients,
+        i;
 
     aggData = otherFns.getAggregatedData();
-    letters = Object.keys(aggData);
-    letters.forEach(function(name){
-        lob.createLobObject(aggData[name]);
-    })
+    patients = Object.keys(aggData);
+    console.log(letters)
+
+    for(i = 0; i < patients.length; i++) {
+        lob.createLobObject(patients[i], aggData[patients[i]])
+    }
 }
 
 parser = parse({delimiter: ','}, function (err, data) {

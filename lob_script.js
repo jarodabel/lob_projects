@@ -1,6 +1,6 @@
 fs = require('fs');
 
-var filePath = 'lob_patient_statement.html';
+var filePath = './rmhw/lob_patient_statement.html';
 
 
 
@@ -16,7 +16,7 @@ fs.readFile(filePath, {encoding: 'utf-8'}, function (err, data) {
 
         var today = monthNames[month] + ' ' + day + ', ' + year;
 
-        var Lob = require('Lob')('', {
+        var Lob = require('Lob')('test_546c65dfaf8aa7ce4514678e4a0bb7fae74', {
             apiVersion: '2016-06-30'
         });
 
@@ -101,7 +101,7 @@ fs.readFile(filePath, {encoding: 'utf-8'}, function (err, data) {
                 subtotal: '$70.00',
                 taxfees: '$5.00',
                 email: 'info@rmhwclinic.com',
-                website: 'functionalmedicineofidaho.com'
+                website: '<span>hello</span>'
             }
         }
 
