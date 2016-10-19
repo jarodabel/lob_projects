@@ -1,12 +1,19 @@
-s
 <html>
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <title>Hemma Health Invoice</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Source+Code+Pro" rel="stylesheet">
+    <title>Hemma Health CHC simple invoice</title>
 </head>
 <body>
 <!-- all text should be within page-content -->
 <div class="page-content">
+    <div id="return-address-window">
+        <div id="return-logo">
+            <!-- your logo here! -->
+
+            <img src="" style="height: 100%">
+        </div>
+    </div>
+    <div id="to-address-window"></div>
     <div class="top-third">
         <div id="heading">
             {{clinicName}}
@@ -17,7 +24,7 @@ s
         <div id="summary">
             <div class="column summary-left">
                 <div class="bill"><span>This Is A Bill</span></div>
-                <div class="date"><span>{{date}}</span></div>
+                <div class="date"><span>{{today}}</span></div>
             </div>
             <div class="column summary-right">
                 <div class="total-string"><span>TOTAL</span></div>
@@ -26,8 +33,6 @@ s
                 </div>
             </div>
         </div>
-
-
     </div>
     <div class="content">
         <div class="high-level-details">
@@ -62,7 +67,7 @@ s
                         <div class="footer-label"><span>{{website}}</span></div>
                     </div>
                     <div class="footer-contact-col">
-                        <div class="footer-label"><span>{{city}}, {{state}}</span></div>
+                        <div class="footer-label"><span>{{address_city}}, {{address_state}}</span></div>
                     </div>
                     <div class="footer-contact-col">
                         <div class="footer-label"><span>{{email}}</span></div>
@@ -70,15 +75,10 @@ s
                 </div>
             </div>
 
-            <div id="return-address-window">
-                <div id="return-logo">
-                    <!-- your logo here! -->
 
-                    <img src="" style="height: 100%">
-                </div>
-            </div>
         </div>
     </div>
+</div>
 </body>
 <style>
 
@@ -94,17 +94,34 @@ s
         margin: 0;
         padding: 0;
         background-color: white;
-        font-family: 'Helvetica';
+        font-family: 'Source Code Pro', monospace;
+        /*font-family: 'Playfair Display', serif;*/
         font-weight: 400;
+    }
+
+    .title-font {
+        font-family: 'Playfair Display', serif;
+    }
+
+    .body-font {
+        font-family: 'Source Code Pro', monospace;
     }
 
     .page-content {
         position: relative;
         width: 8.125in;
-        height: 10.625in;
+        height: 10.25in;
         left: 0.1875in;
         top: 0.1875in;
         /*border: black solid 1px;*/
+    }
+
+    #to-address-window {
+        position: absolute;
+        left: .625in;
+        top: 1.7in;
+        width: 4in;
+        height: 1in;
     }
 
     #return-address-window {
@@ -124,13 +141,13 @@ s
     }
 
     .top-third {
-        height: 3.5in;
+        height: 4in;
         background-color: lightgrey;
     }
 
     #heading {
         position: relative;
-        top: 1in;
+        top: .5in;
         left: 4.6in;
         width: 3in;
         text-transform: uppercase;
@@ -147,17 +164,19 @@ s
     }
 
     #summary {
+        position: absolute;
+        top: .75in;
+        left: 0in;
         height: 1in;
-        /*border: 1px solid black;*/
+        width: 8.125in;
         padding-right: .5in;
         padding-left: .5in;
-        margin-top: 1.5in;
+        margin-top: 2in;
         clear: both;
     }
 
     .column {
         width: 50%;
-        /*border: 1px solid black;*/
         height: 100%;
     }
 
@@ -183,7 +202,7 @@ s
     .summary-right > .total-string {
         margin-left: .2em;
         margin-top: .2em;
-        font-size: .4em;
+        font-size: 1em;
     }
 
     .summary-right > .balance {
@@ -201,10 +220,9 @@ s
 
     #footer {
         height: .75in;
-        /*border: 1px solid black;*/
         padding-right: .5in;
         padding-left: .5in;
-        margin-top: 1.5in;
+        margin-top: 1in;
         clear: both;
     }
 
@@ -228,6 +246,7 @@ s
 
     .footer-col-1 {
         width: 15%;
+        margin-left: .1em;
     }
 
     .footer-col-3 {
@@ -246,7 +265,7 @@ s
         position: absolute;
         bottom: 0;
         right: 0;
-        font-size: 2em;
+        font-size: 1.75em;
     }
 
     .footer-contact-col {
@@ -262,8 +281,6 @@ s
 
     .cell {
         display: table-cell;
-        /*    border-left: 1px solid black;
-            border-bottom: 1px solid black;*/
         padding: 10px;
     }
 

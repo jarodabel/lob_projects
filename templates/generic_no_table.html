@@ -1,0 +1,255 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Source+Code+Pro" rel="stylesheet">
+    <title>Hemma Health CHC simple invoice</title>
+</head>
+<style>
+
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 8.5in;
+        height: 11in;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-family: 'Source Code Pro', monospace;
+        font-weight: 400;
+    }
+
+    .page-content {
+        position: relative;
+        width: 8.125in;
+        height: 10.25in;
+        left: 0.1875in;
+        top: 0.1875in;
+    }
+
+    #to-address-window {
+        position: absolute;
+        left: .625in;
+        top: 1.7in;
+        width: 4in;
+        height: 1in;
+    }
+
+    #return-address-window {
+        position: absolute;
+        left: .625in;
+        top: .5in;
+        width: 3.25in;
+        height: .875in;
+    }
+
+    #return-logo {
+        position: absolute;
+        left: .07in;
+        top: .02in;
+        width: 2.05in;
+        height: .3in;
+    }
+
+    .top-third {
+        height: 3in;
+    }
+
+    #heading {
+        position: relative;
+        top: .5in;
+        left: 4.6in;
+        width: 3in;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .25in;
+        text-align: right;
+    }
+
+    #subheading {
+        padding-top: .2in;
+        font-size: .14in;
+        text-transform: none;
+    }
+
+    .content {
+        position: relative;
+        margin-left: .3125in;
+        width: 7.5in;
+        height: 5in;
+    }
+
+    .content-left-side {
+        position: absolute;
+        width: 2.5in;
+        height: 5in;
+        background-color: #a5c8ca;
+        padding: .25in;
+    }
+
+    .content-right-side {
+        position: absolute;
+        left: 2.5in;
+        width: 5in;
+        height: 5in;
+        background-color: #b8dbdd;
+        padding: .25in;
+    }
+
+    .content-right-side .content-heading {
+        font-size: 1.3em;
+    }
+
+    .content-heading {
+        /*font-family: 'Playfair Display', serif;*/
+        font-weight: bolder;
+    }
+
+    .content-item {
+        font-size: .8em;
+        margin-left: .1in;
+        margin-bottom: 1em;
+    }
+
+    .content-item-cell {
+        display: inline-block;
+    }
+
+    .content-item-row .content-item-cell:last-child {
+        text-align: right;
+    }
+
+    .service-list-cell {
+        display: inline-block;
+    }
+
+    .service-list-row .service-list-cell:nth-child(2) {
+        float: right;
+    }
+
+    .section {
+        margin-left: .3125in;
+        width: 7.5in;
+    }
+
+    .total {
+        height: 1in;
+        padding-top: .25in;
+    }
+
+    .total-value {
+        margin: auto 0;
+        float: right;
+        text-align: right;
+        padding: .2in;
+        width: 4in;
+        font-size: 1.3em;
+        background: repeating-linear-gradient(
+                120deg, #a5c8ca, #a5c8ca 2in, #b8dbdd 2in, #b8dbdd 4in
+        );
+    }
+
+    .total-value div:nth-child(1) {
+        clear: right;
+        display: inline-block;
+        float: left
+    }
+
+    .total-value div:nth-child(2) {
+        display: inline-block;
+        float: right;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 7in;
+        margin-left: .5625in;
+        font-size: .8em;
+    }
+
+    .footer-line {
+        border-top: 1px solid #b8dbdd;
+    }
+
+</style>
+<body>
+<!-- all text should be within page-content -->
+<div class="page-content">
+    <div id="return-address-window">
+        <div id="return-logo">
+            <!-- your logo here! -->
+
+            <img src="" style="height: 100%">
+        </div>
+    </div>
+    <div id="to-address-window"></div>
+    <div class="top-third">
+        <div id="heading">
+            {{clinicName}}
+            <div>-{{facilityName}}</div>
+            <div id="subheading">
+                {{address_city}}, {{address_state}}
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-left-side">
+            <div class="content-heading">
+                Payable To:
+            </div>
+            <div class="content-item">
+                <div>{{clinicName}}</div>
+                <div>{{facilityName}}</div>
+                <div>{{facilityNumber}}</div>
+                <div>{{address_line_1}}</div>
+                <div>{{address_city}}, {{address_state}}</div>
+                <div>{{address_zip}}</div>
+            </div>
+            <div class="content-heading">
+                Customer:
+            </div>
+            <div class="content-item">
+                <div>{{name}}</div>
+                <div>visit dt:&nbsp;{{visitDate}}</div>
+                <div>claim id:&nbsp;{{claimId}}</div>
+                <div>acct num:&nbsp;{{accountNumber}}</div>
+            </div>
+        </div>
+        <div class="content-right-side">
+            <div class="content-heading">
+                Overview
+            </div>
+            <div class="content-item">
+                <div>
+                    Thank you for visiting us on {{visitDate}} with {{providerName}}. Your total account balance of
+                    {{balance}}
+                    is due now.
+                </div>
+            </div>
+            <div class="content-heading">
+                Services
+            </div>
+            <div class="content-item">
+                <div class="service-list">serviceListReplaceBlock</div>
+            </div>
+        </div>
+    </div>
+    <div class="section total">
+        <div class="total-value">
+            <div>Total Due:</div>
+            <div>{{balance}}</div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-line"></div>
+        <div>Questions?</div>
+        <div>Need a payment plan?</div>
+        <div>Please call the billing department at {{facilityNumber}}</div>
+    </div>
+</div>
+</body>
+
+</html>
