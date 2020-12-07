@@ -35,18 +35,22 @@
 
     #return-address-window {
       position: absolute;
-      left: .625in;
-      top: .5in;
+      left: 10px;
+      top: .125in;
       width: 3.25in;
       height: .875in;
     }
 
     #return-logo {
       position: absolute;
-      left: .07in;
-      top: .02in;
       width: 2.05in;
       height: .3in;
+    }
+
+    #return-logo>img {
+      height: 130%;
+      background: black;
+      padding: 2px;
     }
 
     #white-box {
@@ -62,7 +66,6 @@
 
     #heading {
       padding-top: .6in;
-      width: 7.2in;
       text-transform: uppercase;
       font-weight: 700;
       font-size: .25in;
@@ -86,13 +89,24 @@
 
     .content {
       width: 100%;
-      display: flex;
+      /* display: flex; */
     }
 
     .column {
       width: 50%;
       padding-left: 10px;
       padding-right: 10px;
+    }
+
+    /* Clear floats after the columns */
+    .content:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .content>.left-column {
+      padding-top: 2.6in;
     }
 
     .top {
@@ -117,20 +131,18 @@
       display: flex;
       justify-content: space-between;
     }
+
+    .column {
+      float: left;
+      width: 50%;
+    }
   </style>
 </head>
 
 <body>
   <!-- all text should be within page-content -->
   <div class="page-content">
-    <div id="heading">
-      Invoice
-      <div id="subheading">
-        Invoice #123<br>
-        Customer ID: DUSXJUS<br>
-        Date: July 8, 2018
-      </div>
-    </div>
+
 
     <div class="content">
       <div class='column left-column'>
@@ -141,7 +153,7 @@
               <strong>Total Charges</strong>
             </div>
             <div class="payment-cell">
-              $ 1,364.00
+              {{total_charges}}
             </div>
           </div>
           <div class="payment-row">
@@ -185,6 +197,14 @@
       </div>
       <!-- right column -->
       <div class='column right-column'>
+        <div id="heading">
+          Invoice
+          <div id="subheading">
+            Invoice #123<br>
+            Customer ID: DUSXJUS<br>
+            Date: July 8, 2018
+          </div>
+        </div>
         <h3>Important Message</h3>
         <p>
           As your community partner and provider of choice we want you to know we are heare for you. Please le us know
@@ -224,8 +244,8 @@
     <div id="return-address-window">
       <div id="return-logo">
         <!-- your logo here! -->
-        <img src="https://s3-us-west-2.amazonaws.com/public.lob.com/gallery_templates/letter_invoice/crafty-logo.png"
-          style="height: 100%">
+        <img
+          src="https://chcsek.org/wp-content/uploads/2019/03/community-health-center-of-southeast-kansas-logo-header.png">
       </div>
     </div>
 </body>
