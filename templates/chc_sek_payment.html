@@ -18,9 +18,9 @@
       height: 11in;
       margin: 0;
       padding: 0;
-      background-color: white;
       font-family: 'Open Sans';
       font-weight: 400;
+      font-size: .12in;
     }
 
     .page {
@@ -36,11 +36,7 @@
       height: 10.625in;
       left: 0.1875in;
       top: 0.1875in;
-      border: 1px dashed black;
-      font-size: 12px;
     }
-
-    /* .front {} */
 
     #return-address-window {
       position: absolute;
@@ -69,7 +65,6 @@
       position: absolute;
       left: .8in;
       top: 1.54in;
-      font-size: 13px;
       padding: 20px 15px;
     }
 
@@ -90,11 +85,9 @@
     #footer {
       bottom: 0;
       position: absolute;
-      font-size: .1in;
       text-align: center;
       width: 100%;
       height: calc(3.65in - 0.1875in);
-      border-top: 1px dashed black;
     }
 
     .footer-address {
@@ -104,12 +97,10 @@
       height: 1.125in;
       width: 4.25in;
       bottom: 0in;
-      border: 1px dashed black;
     }
 
     .content {
       width: 100%;
-      /* display: flex; */
     }
 
     .column {
@@ -144,10 +135,6 @@
       background-color: lightgray;
     }
 
-    .bottom {
-      font-size: .12in;
-    }
-
     .hidden {
       visibility: hidden;
     }
@@ -171,8 +158,6 @@
       height: 1em;
     }
 
-
-
     /* footer */
     .perf-return-address {
       position: absolute;
@@ -180,7 +165,6 @@
       left: 0.6875in;
       width: 4.25in;
       height: 1.125in;
-      border: 1px black solid;
     }
 
     #logo {
@@ -201,15 +185,27 @@
     }
 
 
-    /* .back {} */
-
     .back #footer {
       text-align: left;
     }
 
     .charges-group {
-      border: solid black 1px;
       margin-bottom: 20px;
+    }
+
+    table {
+      font-size: .12in;
+      max-width: 700px;
+      width: 700px;
+    }
+
+    td:nth-child(-n+3) {
+      white-space: nowrap;
+    }
+
+    .table-spacer-row {
+      height: 4.5in;
+      ;
     }
 
     .row {
@@ -241,9 +237,10 @@
 
     .footer-change-address {
       margin-top: 0.05in;
+      margin-left: 0.2in;
       height: 3in;
-      width: 100%;
-      border: black solid 1px;
+      width: calc(100%-0.1in);
+      /* border: black solid 1px; */
     }
 
     .footer-change-row {
@@ -256,21 +253,16 @@
     }
 
     .footer-change-row--quarter {
-      width: 25%;
+      width: 24.5%;
       display: inline-block;
       margin: 0 auto;
     }
 
     .footer-change-row--half {
-      width: 50%;
+      width: 49.5%;
       display: inline-block;
       margin: 0 auto;
     }
-
-    /* .footer-change-row--three-quarters {
-      width: 75%;
-      border: 1px solid green;
-    } */
 
     .footer-change-row--border-left {
       border-left: black solid 1px;
@@ -373,7 +365,7 @@
                 <strong>Due Date</strong>
               </div>
               <div class="payment-cell">
-                {{statement_due_date}}
+                Upon Receipt
               </div>
             </div>
 
@@ -438,7 +430,7 @@
                 <strong>Due Date</strong>
               </div>
               <div class="payment-cell">
-                {{statement_due_date}}
+                Upon Receipt
               </div>
             </div>
             <div class="payment-row-blank"></div>
@@ -460,41 +452,32 @@
   <div class="page back">
     <div class="page-content">
       <div class="charges-group">
-        <div class="row">
+        <div class="row header-row">
           <div class='column left-column'>
             <div>Patient Name: {{name}}</div>
             <div>Patient Account Number: {{id}}</div>
           </div>
           <div class='column right-column'>
-            <div>Insurance:</div>
-            <div>Insurance:</div>
-            <div>Insurance:</div>
+            <div>Insurance: {{insurance}}</div>
           </div>
         </div>
         <div class="row">
           <div class='both-columns'>
-            table here
+            {{charges}}
+          </div>
+        </div>
+        <div class="row" id="charge-messages">
+          <div class='column left-column'>
+            <div>Due Date: Upon Receipt</div>
+          </div>
+          <div class='column right-column'>
+            <div style="text-align: right;">Amount You Owe: {{amtDue}}</div>
+          </div>
+          <div class='both-columns'>
+            {{statement_code}}
           </div>
           <div class='both-columns'>
             A portion of your account is now due. Please REMIT the AMOUNT DUE shown on this statement.
-          </div>
-        </div>
-      </div>
-      <div class="charges-group">
-        <div class="row">
-          <div class='column left-column'>
-            <div>Due Date:</div>
-          </div>
-          <div class='column right-column'>
-            <div>AMOUNT YOU OWE:</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class='column left-column'>
-            <div>Upon Receipt</div>
-          </div>
-          <div class='column right-column'>
-            <div>{{amount_owed}}</div>
           </div>
         </div>
       </div>
@@ -507,19 +490,59 @@
         </div>
         <div class="footer-change-address">
           <div class="footer-change-row">
-            <div class="footer-change-row--half">half</div>
-            <div class="footer-change-row--quarter">qrt</div>
-            <div class="footer-change-row--quarter">qrt</div>
+            <div class="footer-change-row--half">New Address</div>
+            <div class="footer-change-row--quarter">City, State, Zip</div>
+            <div class="footer-change-row--quarter">New Phone</div>
           </div>
-          <div class="footer-change-row"></div>
-          <div class="footer-change-row"></div>
-          <div class="footer-change-row"></div>
-          <div class="footer-change-row"></div>
-          <div class="footer-change-row"></div>
+          <div class="footer-change-row">
+            <div class="footer-change-row--half">Policy Holders Name/Relationship to Patient</div>
+            <div class="footer-change-row--quarter">Policy #</div>
+            <div class="footer-change-row--quarter">Group #</div>
+          </div>
+          <div class="footer-change-row">
+            <div class="footer-change-row--quarter">Effective Date</div>
+            <div class="footer-change-row--quarter">Birth Date Of Insured</div>
+            <div class="footer-change-row--quarter">HMO/PPO/Other</div>
+            <div class="footer-change-row--quarter">Insurance Phone</div>
+          </div>
+          <div class="footer-change-row">
+            If Group Insurance, Name of Group (Employeer, Union/Association)
+          </div>
+          <div class="footer-change-row">
+            <div class="footer-change-row--half">Insurance Company Name</div>
+            <div class="footer-change-row--half">Insurance Address</div>
+          </div>
+          <div class="footer-change-row">
+            <div class="footer-change-row--half">Employer</div>
+            <div class="footer-change-row--half">Employer Address</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page" id='second-page'>
+    <div class="page-content">
+      <div class="charges-group second-table-container">
+        <div class="row">
+          <div class='both-columns'>
+            {{chargesExtended}}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </body>
+<script>
+  var bigTable = document.getElementsByClassName('secondTable');
+  if (!bigTable.length) {
+    document.getElementById('second-page').setAttribute('style', 'display:none');
+  } else {
+    const messages = document.getElementById('charge-messages');
+    const secondTable = document.getElementsByClassName('second-table-container')[0];
+
+    secondTable.appendChild(messages);
+  }
+
+</script>
 
 </html>
