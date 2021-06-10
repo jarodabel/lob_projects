@@ -1,0 +1,166 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <title>CHCSEK Request For Payment</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 8.5in;
+      height: 11in;
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: .12in;
+    }
+
+    .page {
+      page-break-after: always;
+      position: relative;
+      width: 8.5in;
+      height: 11in;
+    }
+
+    .page-content {
+      position: relative;
+      width: 8.125in;
+      height: 10.625in;
+      left: 0.1875in;
+      top: 0.1875in;
+    }
+
+    .print-window {
+      position: absolute;
+      width: 3.15in;
+      height: 2in;
+      left: 0.6in;
+      top: 0.84in;
+    }
+
+    .return-window {
+      position: absolute;
+      left: 10px;
+      top: .125in;
+      width: 3.25in;
+      height: .875in;
+    }
+
+    .return-window-logo {
+      position: absolute;
+      width: 2.05in;
+      height: .4in;
+    }
+
+    .return-window-logo>img {
+      height: 100%;
+      background: black;
+      padding: 2px;
+    }
+
+    /* footer */
+    #footer {
+      bottom: 0;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      height: calc(3.65in - 0.1875in);
+    }
+
+    .footer__perf-return-address {
+      margin: auto;
+      text-align: left;
+      position: absolute;
+      bottom: 0.375in;
+      left: 0.6875in;
+      width: 4.25in;
+      height: 1.125in;
+    }
+
+    .footer__perf-return-address__content {
+      padding-left: 0.5in;
+      position: absolute;
+      bottom: 0.25in;
+    }
+
+    #footer__logo {
+      height: .4in;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    #footer__logo>img {
+      height: 100%;
+      background: black;
+      padding: 2px;
+    }
+
+    /* DO NOT TOUCH ABOVE HERE */
+
+    .b {
+      border: 1px solid black;
+    }
+
+    .main-content {
+      width: 100%;
+    }
+
+    .top-third {
+      position: absolute;
+      width: 4.75in;
+      height: 2.84in;
+      left: 3.5625in;
+      top: 0in;
+    }
+
+    .footer-content {
+      width: 100%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="print-window b"></div>
+
+    <div class="page-content b">
+      <div class="return-window b">
+        <div class="return-window-logo">
+          <img
+            src="https://chcsek.org/wp-content/uploads/2019/03/community-health-center-of-southeast-kansas-logo-header.png">
+        </div>
+      </div>
+      <div id="footer">
+        <div class="footer__perf-return-address">
+          <div class="footer__perf-return-address__content">
+            CHC/SEK</br>
+            3011 N. Michigan Street</br>
+            Pittsburg KS, 66762
+          </div>
+        </div>
+        <div class='footer-content'>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="top-third b"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

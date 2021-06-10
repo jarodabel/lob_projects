@@ -20,7 +20,6 @@
       padding: 0;
       font-family: 'Open Sans';
       font-weight: 400;
-      font-size: .12in;
     }
 
     .page {
@@ -41,20 +40,18 @@
     #return-address-window {
       position: absolute;
       left: 10px;
-      top: .125in;
       width: 3.25in;
       height: .875in;
     }
 
     #return-logo {
       position: absolute;
-      width: 2.05in;
-      height: .3in;
+      height: .5in;
     }
 
     #return-logo>img {
-      height: 130%;
-      background: black;
+      height: 100%;
+      background: #007236;
       padding: 2px;
     }
 
@@ -68,36 +65,7 @@
       padding: 20px 15px;
     }
 
-    #heading {
-      padding-top: .6in;
-      text-transform: uppercase;
-      font-weight: 700;
-      font-size: .25in;
-      text-align: right;
-    }
 
-    #subheading {
-      padding-top: .2in;
-      font-size: .14in;
-      text-transform: none;
-    }
-
-    #footer {
-      bottom: 0;
-      position: absolute;
-      text-align: center;
-      width: 100%;
-      height: calc(3.65in - 0.1875in);
-    }
-
-    .footer-address {
-      padding-left: .875in;
-      padding-bottom: .5in;
-      position: absolute;
-      height: 1.125in;
-      width: 4.25in;
-      bottom: 0in;
-    }
 
     .content {
       width: 100%;
@@ -125,14 +93,18 @@
       float: right;
     }
 
-    .main.content>.left-column {
-      padding-top: 2.7in;
+    .main .left-column {
+      background-color: #E6E6E6;
+      border: white 1px solid;
     }
 
-    .top {
-      font-weight: 700;
-      font-size: .135in;
-      background-color: lightgray;
+    .main .right-column {
+      background-color: #E6E6E6;
+      border: white 1px solid;
+    }
+
+    .main.content>.left-column {
+      margin-top: 2.9in;
     }
 
     .hidden {
@@ -143,23 +115,196 @@
       text-align: right;
     }
 
+    .padding-4 {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+    .box-border {
+      border: #454311 solid 3px;
+      padding: 2px;
+    }
+
+    .box-green-background {
+      background-color: #007236;
+      color: white;
+    }
+
     .payment-cell:nth-of-type(1) {
-      width: 60%;
-      display: inline-block;
+      display: table-cell;
     }
 
     .payment-cell:nth-of-type(2) {
       text-align: right;
-      width: 39%;
-      display: inline-block;
+      display: table-cell;
+    }
+
+    .payment-row {
+      display: table;
+      width: 100%;
     }
 
     .payment-row-blank {
       height: 1em;
     }
 
+    .payment-cell-image {
+      width: 40px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .payment-cell-text {
+      width: calc(100% - 50px);
+      padding-left: 10px;
+      display: inline-block;
+    }
+
+    .credit-card-form {
+      width: 100%;
+    }
+
+    .green-font {
+      color: #007236;
+    }
+
+    /* credit card */
+    .credit-card {
+      border: #454311 1px solid;
+      border-radius: 4px 4px 0px 4px;
+    }
+
+    .credit-card.narrow-table{
+      width: 75%;
+      margin-left: 25%;
+      border-radius: 0px 0px 4px 4px;
+      border-top: 0px;
+    }
+
+    .credit-card-row {
+      display: -webkit-box;
+      height: .40in;
+    }
+
+    .credit-card-row:not(:last-child) {
+      border-bottom: 1px solid #454311;
+    }
+
+    .credit-card-cell {
+      width: 25%;
+      padding: 2px;
+      max-height: 100%;
+      height: 100%;
+    }
+
+    .narrow-table .credit-card-cell{
+      width: 33%;
+    }
+
+    .credit-card-cell>img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .credit-card-footer-note {
+      padding-left: 25%;
+    }
+
+    .cell-4 {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .cell-3 {
+      width: 75% !important;
+      max-width: 75% !important;
+    }
+
+    .short-row {
+      height: .16in !important;
+    }
+
+    .cc-image {
+      text-align: center;
+    }
+
+    .icon-35 {
+      width: 35px;
+    }
+
+    /* fonts */
+
+    .font-18 {
+      font-size: .18in;
+    }
+
+    .font-17 {
+      font-size: .17in;
+    }
+
+    .font-16 {
+      font-size: .16in;
+    }
+
+    .font-15 {
+      font-size: .15in;
+    }
+
+    .font-14 {
+      font-size: .14in;
+    }
+
+    .font-13 {
+      font-size: .13in;
+    }
+
+    .font-12 {
+      font-size: .12in;
+    }
+
+    .font-11 {
+      font-size: 11in;
+    }
+
+    .font-10 {
+      font-size: 10in;
+    }
+
+    .font-09 {
+      font-size: .09in;
+    }
+
+    /* back */
+
+    .header-row {
+      background-color: #E6E6E6;
+      color: #007236;
+      font-weight: bold;
+    }
+
+
     /* footer */
+
+    #footer {
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      height: calc(3.65in - 0.1875in);
+    }
+
+    .footer-address {
+      padding-left: .875in;
+      padding-bottom: .5in;
+      position: absolute;
+      height: 1.125in;
+      width: 4.25in;
+      bottom: 0in;
+    }
+
     .perf-return-address {
+      margin: auto;
+      text-align: left;
       position: absolute;
       bottom: 0.375in;
       left: 0.6875in;
@@ -167,23 +312,28 @@
       height: 1.125in;
     }
 
+    .perf-return-address__content {
+      padding-left: 0.5in;
+      position: absolute;
+      bottom: 0.25in;
+    }
+
     #logo {
-      height: .3in;
-      margin-top: 10px;
+      height: .5in;
+      margin-top: 20px;
       margin-bottom: 10px;
       text-align: left;
     }
 
     #logo>img {
       height: 100%;
-      background: black;
+      background: #007236;
       padding: 2px;
     }
 
     .align-left {
       text-align: left;
     }
-
 
     .back #footer {
       text-align: left;
@@ -194,13 +344,8 @@
     }
 
     table {
-      font-size: .12in;
       max-width: 700px;
       width: 700px;
-    }
-
-    td:nth-child(-n+3) {
-      white-space: nowrap;
     }
 
     .table-spacer-row {
@@ -213,12 +358,11 @@
       width: 100%;
     }
 
-    .row:not(:last-child) {
-      border-bottom: black solid 1px;
+    .row-underline {
+      border-bottom: #2B2F33 solid 1px;
     }
 
     .footer-title {
-      font-size: .15in;
       font-weight: bolder;
       padding-left: 0.1in;
     }
@@ -240,7 +384,6 @@
       margin-left: 0.2in;
       height: 3in;
       width: calc(100%-0.1in);
-      /* border: black solid 1px; */
     }
 
     .footer-change-row {
@@ -249,7 +392,7 @@
     }
 
     .footer-change-row:not(:last-child) {
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #2B2F33;
     }
 
     .footer-change-row--quarter {
@@ -265,25 +408,68 @@
     }
 
     .footer-change-row--border-left {
-      border-left: black solid 1px;
+      border-left: #2B2F33 solid 1px;
     }
 
     .footer-change-row--border-right {
-      border-right: black solid 1px;
+      border-right: #2B2F33 solid 1px;
+    }
+
+    .bottom-box {
+      margin-left: 12px;
+      width: calc(100% - 12px);
+    }
+
+    .charges-table td:nth-child(1) {
+      width: 80px;
+      max-width: 80px;
+    }
+
+    .charges-table td:nth-child(2) {
+      width: 465px;
+      max-width: 465px;
+    }
+
+    .charges-table td:nth-child(3) {
+      width: 50px;
+      max-width: 50px;
+      text-align: right;
+    }
+
+    .charges-table td:nth-child(4) {
+      width: 55px;
+      max-width: 55px;
+      text-align: right;
+    }
+
+    .charges-table td:nth-child(5) {
+      width: 50px;
+      max-width: 50px;
+      text-align: right;
+    }
+
+    #charge-messages{
+      page-break-inside: avoid;
+      page-break-before: auto;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+      }
     }
 
   </style>
 </head>
 
-<body>
+<body class="font-16">
   <!-- all text should be within page-content -->
   <div class="page front">
     <div class="page-content">
       <div id="return-address-window">
         <div id="return-logo">
-          <!-- your logo here! -->
           <img
-            src="https://chcsek.org/wp-content/uploads/2019/03/community-health-center-of-southeast-kansas-logo-header.png">
+            src="https://qwalatee.com/assets/community-health-center-of-southeast-kansas-logo-header.png">
         </div>
       </div>
       <div class="main content">
@@ -295,58 +481,63 @@
                 <strong>Total Charges</strong>
               </div>
               <div class="payment-cell">
-                {{amtDue}}
+                {{totalCharges}}
               </div>
             </div>
+
             <div class="payment-row">
               <div class="payment-cell">
-                Insurance Payments / Adjustments
+                Total Payments / Adjustments
               </div>
               <div class="payment-cell">
-                $ {{insPaymentsAdjustments}}
-              </div>
-            </div>
-            <div class="payment-row">
-              <div class="payment-cell">
-                Patient Payments
-              </div>
-              <div class="payment-cell">
-                $ {{}}
+                {{totalPayments}}
               </div>
             </div>
             <br>
-            <div class="payment-row">
-              <div class="payment-cell">
+            <div class="payment-row box-border box-green-background">
+              <div class="payment-cell padding-4 font-18">
                 <strong>
                   AMOUNT YOU OWE
                 </strong>
               </div>
-              <div class="payment-cell">
+              <div class="payment-cell large-font">
                 <strong>$ {{amtDue}}</strong>
               </div>
             </div>
             <div class="payment-row">
               <div class="payment-cell">
-                Your prompt payment is appreciated!
               </div>
               <div class="payment-cell">
               </div>
             </div>
+            <div class="payment-row-blank"></div>
           </div>
-          <h3>Insurance Information</h3>
           <p>
-            Please review the insurance information on the following pages. To make any changes contact customer
-            service.
+            We have COVID vaccines available at all locations.
+            To schedule visit <strong>www.chcsek.org/getmyshot</strong> or call
+            <strong>620-231-9873</strong>
           </p>
+          <p>
+            "Do all the good you can, for all the people you can, in all the ways you can, for as long as you can."
+            ~Mother Mary Bernard Sheridan, CSJ
+          </p>
+          <!-- <p class="box-border">
+            <strong class="font-18">View and Pay Securely Online</strong>
+            <br>
+            <br>
+            <span>Visit <strong>https://healowpay.com</strong> and use the following code(s)</span>
+            <br>
+            <br>
+            <span class="font-16">{{statement_code}}</span>
+          </p> -->
         </div>
         <!-- right column -->
         <div class='column right-column'>
-          <div class="payment-table">
-            <div class="payment-row-blank"></div>
+          <div class="payment-table green-font">
             <div class="payment-row-blank"></div>
             <div class="payment-row">
               <div class="payment-cell">
-                <strong>Statement Date</strong>
+                <strong>Date</strong>
               </div>
               <div class="payment-cell">
                 {{statementDate}}
@@ -354,7 +545,7 @@
             </div>
             <div class="payment-row">
               <div class="payment-cell">
-                <strong>Responsible Party</strong>
+                <strong>Name</strong>
               </div>
               <div class="payment-cell">
                 {{name}}
@@ -362,87 +553,170 @@
             </div>
             <div class="payment-row">
               <div class="payment-cell">
-                <strong>Due Date</strong>
+                <strong>Account</strong>
               </div>
               <div class="payment-cell">
-                Upon Receipt
+                {{id}}
               </div>
             </div>
-
             <div class="payment-row-blank"></div>
-            <div class="payment-row-blank"></div>
-
           </div>
-          <h3>Important Message</h3>
           <p>
-            As your community partner and provider of choice we want you to know we are here for you. Please let us know
-            if you are needing additional support or assistance due to financial or health impacts associated to
-            COVID-19
-            pandemic.
+            We know that you have choices in healthcare and appreciate
+            your trust in us. Please let us know what we can do to improve your
+            experience. Please email <strong>feedback@chcsek.org</strong> or call <strong>620-231-9873</strong>
+            with comments or questions.
           </p>
-          <p>
-            Community Health Center of Southeast Kansas offers financial and language assistance. Please visit
-            www.chcsek.org for more information.
-          </p>
-          <h3>
-            Payment and Other Information
-          </h3>
-          <p>
-            To pay online and go paperless, visit chcsek.org and click on "Patient Portal"
-          </p>
-          <p>
-            Payment methods include mail, online, and over the phone at 620-231-1960
-          </p>
-          <p>
-            If you need to speak with Patient Accounts, please call <br> 620-231-9873 Mon - Fri 8am - 4pm
-          </p>
+          <!-- <h3>Payment Options</h3> -->
+          <div class="payment-row-blank"></div>
+          <div class="payment-row-blank"></div>
+          <div class="payment-row">
+            <div class="payment-cell-image">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/pdsa-oskee.appspot.com/o/images%2Flaptop-solid.svg?alt=media&token=59d54808-3bf9-48c4-9dff-da96605f255a" />
+            </div>
+            <div class="payment-cell-text">
+              To pay online visit <strong>chcsek.org</strong> and click on "Patient Portal"
+              <br>
+              Or visit <strong>https://healowpay.com</strong> and use the following code(s) {{statement_code}}
+            </div>
+          </div>
+          <div class="payment-row-blank"></div>
+
+          <div class="payment-row">
+            <div class="payment-cell-image">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/pdsa-oskee.appspot.com/o/images%2Fenvelope-regular.svg?alt=media&token=4ee2cfc4-d4c8-43f9-81a3-74ad6cb4d77f" />
+            </div>
+            <div class="payment-cell-text">
+              Send your check or credit card information along with the payment slip below.
+            </div>
+          </div>
+          <div class="payment-row-blank"></div>
+
+          <div class="payment-row">
+            <div class="payment-cell-image">
+              <img class="icon-35"
+                src="https://firebasestorage.googleapis.com/v0/b/pdsa-oskee.appspot.com/o/images%2Fphone-alt-solid.svg?alt=media&token=9c84e1ed-174a-4700-9af9-d47f6e454d69" />
+            </div>
+            <div class="payment-cell-text">
+              To pay by phone call <strong>620-231-1960</strong>, Mon-Fri, 8 am- 5 pm.
+            </div>
+          </div>
+          <div class="payment-row-blank"></div>
+
+          <div class="payment-row">
+            <div class="payment-cell-image">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/pdsa-oskee.appspot.com/o/images%2Fquestion-circle-regular.svg?alt=media&token=cb896490-46a4-40be-8ee6-de9011894757" />
+            </div>
+            <div class="payment-cell-text">
+              For billing questions call <strong>620-231-1960</strong>
+              <br>
+              <br>For other questions call <strong>620-231-9873</strong>
+              <br>
+              <br>Financial and language assistance is available. Se habla Espanol.
+
+            </div>
+          </div>
+          <div class="payment-row-blank"></div>
         </div>
       </div>
 
       <div id="footer">
-        <div class="perf-return-address"></div>
+        <div class="perf-return-address">
+          <div class="perf-return-address__content">
+            CHCSEK PITTSBURG</br>
+            PO Box 1832</br>
+            Pittsburg KS, 66762
+          </div>
+        </div>
         <div class='content'>
           <div class='column left-column'>
             <div id="logo">
               <img
-                src="https://chcsek.org/wp-content/uploads/2019/03/community-health-center-of-southeast-kansas-logo-header.png">
+                src="https://qwalatee.com/assets/community-health-center-of-southeast-kansas-logo-header.png">
             </div>
             <div class="align-left">
-              3011 N. Michigan Street</br>
-              Pittsburg KS, 66762
+
             </div>
           </div>
           <div class='column right-column'>
-            <div class="payment-row-blank"></div>
-            <div class="payment-row-blank"></div>
-            <div class="payment-row-blank"></div>
-
-            <div class="payment-row">
-              <div class="payment-cell">
-                <strong>Amount Due</strong>
+            <br>
+            <div class="credit-card font-09">
+              <div class="credit-card-row short-row">
+                <div class="credit-card-cell cell-4">
+                  If paying by credit card, please check box for selection and fill out below
+                </div>
               </div>
-              <div class="payment-cell">
-                {{amtDue}}
+              <div class="credit-card-row">
+                <div class="credit-card-cell cc-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/pdsa-oskee.appspot.com/o/images%2Fvisa.png?alt=media">
+                  <span>&#x25a2;&nbsp;VISA</span>
+                </div>
+                <div class="credit-card-cell cc-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/pdsa-oskee.appspot.com/o/images%2Fmastercard.png?alt=media">
+                  <span>&#x25a2;&nbsp;MC</span>
+                </div>
+                <div class="credit-card-cell cc-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/pdsa-oskee.appspot.com/o/images%2Fdiscover.png?alt=media">
+                  <span>&#x25a2;&nbsp;DIS</span>
+                </div>
+                <div class="credit-card-cell cc-image">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/pdsa-oskee.appspot.com/o/images%2Famerican-express.png?alt=media">
+                  <span>&#x25a2;&nbsp;AMEX</span>
+                </div>
+              </div>
+              <div class="credit-card-row">
+                <div class="credit-card-cell cell-3">
+                  Card Number
+                </div>
+                <div class="credit-card-cell cell-1">
+                  Security Code
+                </div>
+              </div>
+              <div class="credit-card-row">
+                <div class="credit-card-cell cell-3">
+                  Card Holder Name
+                </div>
+                <div class="credit-card-cell cell-1">
+                  Exp. Date
+                </div>
+              </div>
+              <div class="credit-card-row">
+                <div class="credit-card-cell cell-3">
+                  Signature
+                </div>
+                <div class="credit-card-cell cell-1">
+                  Statement Date
+                  <br>
+                  <strong>{{statementDate}}</strong>
+                </div>
               </div>
             </div>
-            <div class="payment-row">
-              <div class="payment-cell">
-                <strong>Due Date</strong>
-              </div>
-              <div class="payment-cell">
-                Upon Receipt
+            <div class="credit-card font-09 narrow-table">
+              <div class="credit-card-row">
+                <div class="credit-card-cell">
+                  Account No.
+                  <br>
+                  <strong>{{id}}</strong>
+                </div>
+                <div class="credit-card-cell">
+                  Pay This Amount
+                  <br>
+                  <strong>{{amtDue}}</strong>
+                </div>
+                <div class="credit-card-cell">
+                  Show Amount Paid
+                </div>
               </div>
             </div>
-            <div class="payment-row-blank"></div>
-            <div class="payment-row-blank"></div>
-
-            <div class="payment-row">
-              <div class="payment-cell">
-                <strong>Amount Paid</strong>
-              </div>
-              <div class="payment-cell">
-                $________________________
-              </div>
+            <div class="credit-card-footer-note font-09">
+              Charges and credits made after the statement date will appear on the next statement
             </div>
           </div>
         </div>
@@ -452,43 +726,61 @@
   <div class="page back">
     <div class="page-content">
       <div class="charges-group">
-        <div class="row header-row">
+        <div class="row header-row row-underline">
           <div class='column left-column'>
-            <div>Patient Name: {{name}}</div>
-            <div>Patient Account Number: {{id}}</div>
+            <div>Name: {{name}}</div>
+            <div>Account Number: {{id}}</div>
           </div>
           <div class='column right-column'>
-            <div>Insurance: {{insurance}}</div>
           </div>
         </div>
         <div class="row">
           <div class='both-columns'>
-            {{charges}}
+            {{firstTable}}
           </div>
         </div>
-        <div class="row" id="charge-messages">
-          <div class='column left-column'>
-            <div>Due Date: Upon Receipt</div>
+        <div class="row box-border box-green-background font-14 bottom-box" id="charge-messages">
+          <div class='column left-column large-font'>
+            <div>
+              Please view full statement online at chcsek.org and click on patient portal.
+            </div>
           </div>
-          <div class='column right-column'>
-            <div style="text-align: right;">Amount You Owe: {{amtDue}}</div>
+          <div class='column right-column large-font'>
+            <div style="text-align: right;"><strong>AMOUNT YOU OWE: $ {{amtDue}}</strong></div>
           </div>
           <div class='both-columns'>
-            {{statement_code}}
-          </div>
-          <div class='both-columns'>
-            A portion of your account is now due. Please REMIT the AMOUNT DUE shown on this statement.
+            <p class="font-09">
+              Community Health Center of Southeast Kansas is providing this billing statement to you with the
+              appropriate amount of information, so you can make an informed decision about your healthcare and
+              payments. Please make
+              sure that you provide Community Health Center of Southeast Kansas with any necessary updates to your
+              information, including your mailing address and telephone number, when possible.
+            </p>
+            <p class="font-09">
+              Please be aware that you may receive statements that are associated with Community Health Center of
+              Southeast Kansas’s subsidiary, Building Health, or one of Community Health Center of Southeast Kansas’s
+              programs, like SEK Smiles.
+            </p>
+
+            <p class="font-09">
+              Community Health Center of Southeast Kansas owns and operates health clinics in the State of Kansas and
+              the State of Oklahoma.
+            </p>
+            <p class="font-09">
+              Community Health Center of Southeast Kansas operates in full compliance with all applicable state and
+              federal laws.
+            </p>
           </div>
         </div>
       </div>
       <div id="footer">
-        <div class="footer-title">
-          CHANGE OF ADDRESS OR HEALTH INFORMATION
+        <div class="footer-title font-15">
+          CHANGE OF ADDRESS OR INSURANCE INFORMATION
         </div>
         <div class="footer-sub-title">
-          If you have new health insurance or a new address, please enter the information below.
+          If you have new health insurance or a new address, please enter the information below and return this form.
         </div>
-        <div class="footer-change-address">
+        <div class="footer-change-address font-14">
           <div class="footer-change-row">
             <div class="footer-change-row--half">New Address</div>
             <div class="footer-change-row--quarter">City, State, Zip</div>
@@ -506,14 +798,14 @@
             <div class="footer-change-row--quarter">Insurance Phone</div>
           </div>
           <div class="footer-change-row">
-            If Group Insurance, Name of Group (Employeer, Union/Association)
+            If Group Insurance, Name of Group (Employer, Union/Association)
           </div>
           <div class="footer-change-row">
             <div class="footer-change-row--half">Insurance Company Name</div>
             <div class="footer-change-row--half">Insurance Address</div>
           </div>
           <div class="footer-change-row">
-            <div class="footer-change-row--half">Employer</div>
+            <div class="footer-change-row--half">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Employer</div>
             <div class="footer-change-row--half">Employer Address</div>
           </div>
         </div>
@@ -525,22 +817,42 @@
       <div class="charges-group second-table-container">
         <div class="row">
           <div class='both-columns'>
-            {{chargesExtended}}
+            {{secondTable}}
+            {{thirdTable}}
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- <div class="page" id='second-page'>
+    <div class="page-content">
+      <div class="charges-group fourth-table-container">
+        <div class="row">
+          <div class='both-columns'>
+            {{fourthTable}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
 </body>
 <script>
-  var bigTable = document.getElementsByClassName('secondTable');
-  if (!bigTable.length) {
+  var secondTable = document.getElementsByClassName('secondTable');
+  var fourthTable = document.getElementsByClassName('fourthTable');
+
+  if (!secondTable.length) {
     document.getElementById('second-page').setAttribute('style', 'display:none');
-  } else {
+  } else if (secondTable.length && !fourthTable.length) {
     const messages = document.getElementById('charge-messages');
     const secondTable = document.getElementsByClassName('second-table-container')[0];
 
     secondTable.appendChild(messages);
+  } else {
+    const messages = document.getElementById('charge-messages');
+    const fourthTable = document.getElementsByClassName('fourth-table-container')[0];
+
+    fourthTable.appendChild(messages);
   }
 
 </script>
